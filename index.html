@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja-jp">
-<head>
-  <meta charset="UTF-8">
-  <title>Vue First</title>
-  <script src="https://unpkg.com/vue"></script>
-</head>
-<body>
-  <!-- ここの下 -->
-  <script src="scripts/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue First</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id='desired-prefs'>
+      <ul>
+        <li>
+          <input v-bind="allArea" class="area" type="checkbox" v-on:click="checkAllArea">
+          <label v-on:click="checkAllArea">全国</label>
+        </li>
+        <template v-for="area in areas">
+          <li>
+            <input v-bind="area" class="area" type="checkbox" v-on:click="checkArea(area.id)">
+            <label v-on:click="checkArea(area.id)">{{area.name}}</label>
+            <ul v-for="pref in prefs.filter(pref => pref.areaId === area.id)">
+              <li>
+                <input v-bind="pref" class="pref" type="checkbox" v-on:click="checkPref(pref.id)">
+                <label v-on:click="checkPref(pref.id)">{{pref.name}}</label>
+              </li>
+            </ul>
+          </li>
+        </template>
+      </ul>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>
