@@ -67,10 +67,10 @@ var vm = new Vue({
         var checked = !this.areas[i].checked
         this.areas[i].checked = checked
 
-        var prefIdx = 0
-        this.prefs.forEach(pref => {
-            if(pref.areaId === id) {this.prefs[prefIdx].checked = checked }
-            prefIdx++
+        this.prefs.map(pref => {
+            if(pref.areaId === id) {
+              this.prefs[pref.id - 1].checked = checked
+            }
         })
       },
       checkPref: function(id) {
