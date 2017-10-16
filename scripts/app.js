@@ -26,7 +26,7 @@ var vm = new Vue({
         {"id":12,"name":"千葉県","areaId": 2,"checked": false},
         {"id":13,"name":"東京都","areaId": 2,"checked": false},
         {"id":14,"name":"神奈川県","areaId": 2,"checked": false},
-        {"id":15,"name":"新潟県","areaId": 3,"areaId": 3,"checked": false},
+        {"id":15,"name":"新潟県","areaId": 3,"checked": false},
         {"id":16,"name":"富山県","areaId": 3,"checked": false},
         {"id":17,"name":"石川県","areaId": 3,"checked": false},
         {"id":18,"name":"福井県","areaId": 3,"checked": false},
